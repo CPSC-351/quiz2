@@ -19,7 +19,22 @@ void child1()
 {
 	fprintf(stderr, "I am child pid=%d; my parent is pid=%d\n", getpid(), getppid());
 	
-	//TODO: Fill me in	
+	//TODO: Fill me in
+	//Create child processes child 3 and child 4
+	//Wait for them to terminate	
+	if(fork()==0)
+	{
+	 child3();
+	 child4();
+ 	}
+
+	/* Wait for the child to exit */
+		if(wait(NULL) < 0)
+		{
+			perror("wait");
+			exit(-1);
+		}	
+
 }
 
 /**
@@ -29,7 +44,19 @@ void child2()
 {
 	fprintf(stderr, "I am child pid=%d; my parent is pid=%d\n", getpid(), getppid());
 	
-	//TODO: Fill me in	
+	//TODO: Fill me in
+	//Create child processes child 5 and child 6	
+	if(fork()==0)
+	{
+	 child5();
+	 child6();
+	}
+	/* Wait for the child to exit */
+		if(wait(NULL) < 0)
+		{
+			perror("wait");
+			exit(-1);
+		}	
 
 }
 
@@ -76,7 +103,19 @@ void child6()
 void parent()
 {
 	fprintf(stderr, "I am the original parent; my process ID is pid=%d\n", getpid());
-	
+	if (fork() == 0)
+	{
+	 child1();
+	 child2();
+	}
+	else 
+	{
+	  if(wait(NULL)<0)
+	  {
+		perror("wait);
+		exit(-1);
+	  }
+	}
 }
 
 
