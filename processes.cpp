@@ -27,13 +27,13 @@ void child1()
 		perror("fork");
 		exit(-1);
 	}
-	if(child1pid==0)
+	else if(child1pid==0)
 	{
 	 child3();
-	 //child4();
+	 child4();
  	}
-	else
-	if(wait(NULL)<0)
+
+	else if(wait(NULL)<0)
 	{
 		perror("wait");
 		exit(-1);
@@ -61,9 +61,7 @@ void child2()
 	 child5();
 	 //child6();
 	}
-	else
-		if(wait(NULL)<0)
-		{
+	else if(wait(NULL)<0) {
 		perror("wait");
 		exit(-1);
 		}
@@ -106,10 +104,28 @@ void child6()
  */
 void parent()
 {
-	pid_t pid;
+	pid_t child, child1;
 	fprintf(stderr, "I am the original parent; my process ID is pid=%d\n", getpid());
 
-  pid = fork();
+	child == fork();
+
+	if (child == 0) {
+		child1();
+		sleep(1);
+		exit(5);
+	}
+	else if (child > 0)
+	{
+		child2();
+		sleep(1);
+		exit(5);
+	}
+
+	else {
+		perror("wait");
+		exit(1);
+	}
+  /*pid = fork();
 
 	if (pid < 0)
 	{
@@ -117,12 +133,17 @@ void parent()
 		exit(-1);
 	}
 
-	if (pid == 0)
+	else if (pid == 0)
 	{
 	 child1();
-	}
-	//if (pid == 0)
+	 sleep(1);
+	 exit(5);
 	 //child2();
+	}
+	else if (pid > 0) {
+		child2();
+	}
+
 
 	else
 	 if(wait(NULL)<0)
@@ -131,7 +152,7 @@ void parent()
 		 exit(-1);
 	 }
 	//else
-   //wait(NULL);
+   //wait(NULL);*/
 }
 /**
  * The main function
