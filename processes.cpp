@@ -16,27 +16,25 @@ void child6();
  */
 void child1()
 {
-	pid_t child1pid;
-	fprintf(stderr, "I am child pid=%d; my parent is pid=%d\n", getpid(), getppid());
-	child1pid = fork();
+	pid_t c1pid1,c1pid2;
+	fprintf(stderr, "I am child 1 pid=%d; my parent is pid=%d\n", getpid(), getppid());
 	//TODO: Fill me in
 	//Create child processes child 3 and child 4
 	//Wait for them to terminate
-	if(child1pid<0)
-	{
-		perror("fork");
-		exit(-1);
+	c1pid2 = fork();
+	if(c1pid2==0){
+		child4();
 	}
-	if(child1pid==0)
-	{
-	 child3();
-	 //child4();
- 	}
-	else
-	if(wait(NULL)<0)
-	{
-		perror("wait");
-		exit(-1);
+	else if (c1pid2>0){
+		c1pid1 = fork();
+		if(c1pid1<0){
+			perror("fork");
+			exit(-1);
+		}
+		else if(c1pid1==0){
+			//usleep(1000);
+			child3();
+		}
 	}
 }
 /**
@@ -44,29 +42,25 @@ void child1()
  */
 void child2()
 {
-	pid_t child2pid;
-	fprintf(stderr, "I am child pid=%d; my parent is pid=%d\n", getpid(), getppid());
-	child2pid = fork();
+	pid_t c2pid1,c2pid2;
+	fprintf(stderr, "I am child 2 pid=%d; my parent is pid=%d\n", getpid(), getppid());
 
-	//TODO: Fill me in
-	//Create child processes child 3 and child 4
-	//Wait for them to terminate
-	if(child2pid<0)
-	{
-		perror("fork");
-		exit(-1);
+	c2pid2 = fork();
+	if(c2pid2==0){
+		child6();
 	}
-	if(child2pid==0)
-	{
-	 child5();
-	 //child6();
-	}
-	else
-		if(wait(NULL)<0)
-		{
-		perror("wait");
-		exit(-1);
+	else if (c2pid2>0){
+		c2pid1 = fork();
+		if(c2pid1<0){
+			perror("fork");
+			exit(-1);
 		}
+		else if(c2pid1==0){
+			//usleep(1000);
+			child5();
+		}
+	}
+
 }
 
 /**
@@ -74,7 +68,7 @@ void child2()
  */
 void child3()
 {
-	fprintf(stderr, "I am child pid=%d; my parent is pid=%d\n", getpid(), getppid());
+	fprintf(stderr, "I am child 3 pid=%d; my parent is pid=%d\n", getpid(), getppid());
 }
 
 /**
@@ -82,7 +76,7 @@ void child3()
  */
 void child4()
 {
-	fprintf(stderr, "I am child pid=%d; my parent is pid=%d\n", getpid(), getppid());
+	fprintf(stderr, "I am child 4 pid=%d; my parent is pid=%d\n", getpid(), getppid());
 }
 
 
@@ -92,46 +86,38 @@ void child4()
 void child5()
 {
 
-	fprintf(stderr, "I am child pid=%d; my parent is pid=%d\n", getpid(), getppid());
+	fprintf(stderr, "I am child 5 pid=%d; my parent is pid=%d\n", getpid(), getppid());
 }
 /**
  * The function called by the SIXTH child.
  */
 void child6()
 {
-	fprintf(stderr, "I am child pid=%d; my parent is pid=%d\n", getpid(), getppid());
+	fprintf(stderr, "I am child 6 pid=%d; my parent is pid=%d\n", getpid(), getppid());
 }
 /**
  * The function called by the parent
  */
 void parent()
 {
-	pid_t pid;
-	fprintf(stderr, "I am the original parent; my process ID is pid=%d\n", getpid());
+	pid_t pid1, pid2;
+  fprintf(stderr, "I am the original parent; my process ID is pid=%d\n", getpid());
 
-  pid = fork();
 
-	if (pid < 0)
-	{
-		perror("fork");
-		exit(-1);
+	pid2 = fork();
+	if(pid2==0){
+		child2();
 	}
-
-	if (pid == 0)
-	{
-	 child1();
+	else if (pid2>0){
+		pid1 = fork();
+		if(pid1<0){
+			perror("fork");
+			exit(-1);
+		}
+		else if(pid1==0){
+			child1();
+		}
 	}
-	//if (pid == 0)
-	 //child2();
-
-	else
-	 if(wait(NULL)<0)
-	 {
-		 perror("wait");
-		 exit(-1);
-	 }
-	//else
-   //wait(NULL);
 }
 /**
  * The main function
