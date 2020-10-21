@@ -1,8 +1,11 @@
 # quiz2
-Team Members:
- Robert Kenny - rlkenny@csu.fullerton.edu
- Dustin Vuong - dhvuong@csu.fullerton.edu
+<b>Team Members:</b><br>
+ Robert Kenny - rlkenny@csu.fullerton.edu<br>
+ Dustin Vuong - dhvuong@csu.fullerton.edu<br>
+ Tiffanny Hernaez - tiffannyhernaez@csu.fullerton.edu<br>
+ Sagar Joshi - <br>
+ Stephanie - <br>
  
-For this program we used C++
+For this program we used <b>C++<b>
 
-Execution:
+<b>Execution:</b>
