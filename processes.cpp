@@ -60,9 +60,7 @@ void child2()
 			child5();
 		}
 	}
-
 }
-
 /**
  * The function called by the THIRD child.
  */
@@ -70,7 +68,6 @@ void child3()
 {
 	fprintf(stderr, "I am child 3 pid=%d; my parent is pid=%d\n", getpid(), getppid());
 }
-
 /**
  * The function called by the FOURTH child.
  */
@@ -78,8 +75,6 @@ void child4()
 {
 	fprintf(stderr, "I am child 4 pid=%d; my parent is pid=%d\n", getpid(), getppid());
 }
-
-
 /**
  * The function called by the FIFTH child.
  */
@@ -102,8 +97,6 @@ void parent()
 {
 	pid_t pid1, pid2;
   fprintf(stderr, "I am the original parent; my process ID is pid=%d\n", getpid());
-
-
 	pid2 = fork();
 	if(pid2==0){
 		child2();
