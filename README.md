@@ -17,7 +17,7 @@
  * <b>Child1<b> creates child processes <b>Child3<b> and <b>Child4<b> and waits for both to terminate
  * <b>Child2<b> creates child processes <b>Child5<b> and <b>Child6<b> and waits for boht to terminate
 
-## Execution, copy and paste this:
+## To execute this program on Tuffix, first clone the repository:
 `git clone https://github.com/CPSC-351/quiz2.git`
 
 ## Then run the program on Tuffix using:
