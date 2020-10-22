@@ -6,10 +6,12 @@
  Sagar Joshi - sagar0698@csu.fullerton.edu<br>
  Stephanie Casillas - stepc25@csu.fullerton.edu<br>
  
-## For this program we used: <b>C++<b>
+<b>For this program we used: C++<b>
 
 ## Execution, copy and paste this:
 `git clone https://github.com/CPSC-351/quiz2.git`
 
 ## Then run the program on Tuffix using:
 `g++ processes.cpp -o process`
+
+`./process`
