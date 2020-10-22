@@ -8,4 +8,8 @@
  
 For this program we used <b>C++<b>
 
-<b>Execution:</b>
+# Execution, copy and paste this:
+`git clone  `
+
+## Then run the program on Tuffix using:
+`g++ processes.cpp -o process`
