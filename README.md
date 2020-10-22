@@ -7,6 +7,7 @@
  Stephanie Casillas - stepc25@csu.fullerton.edu<br>
  
  We utilized fork() and wait() UNIX process management system calls by creating seven processes that have the parent-child relationships shown in the diagram below:
+ 
  ![image](https://user-images.githubusercontent.com/55200206/96838907-55149d00-13fd-11eb-8f12-73658fcca24f.png)
 
 <b>For this program we used: C++<b>
