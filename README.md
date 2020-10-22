@@ -7,6 +7,7 @@
  Stephanie Casillas - stepc25@csu.fullerton.edu<br>
  
  ![image](https://user-images.githubusercontent.com/55200206/96838907-55149d00-13fd-11eb-8f12-73658fcca24f.png)
+
 <b>For this program we used: C++<b>
 
 ## Execution, copy and paste this:
