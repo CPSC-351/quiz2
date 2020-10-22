@@ -1,4 +1,4 @@
-# quiz2
+# CPSC 351-Quiz 2
 <b>Team Members:</b><br>
  Robert Kenny - rlkenny@csu.fullerton.edu<br>
  Dustin Vuong - dhvuong@csu.fullerton.edu<br>
