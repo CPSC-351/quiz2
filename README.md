@@ -4,7 +4,7 @@
  Dustin Vuong - dhvuong@csu.fullerton.edu<br>
  Tiffanny Hernaez - tiffannyhernaez@csu.fullerton.edu<br>
  Sagar Joshi - sagar0698@csu.fullerton.edu<br>
- Stephanie - stepC25@csu.fullerton.edu<br>
+ Stephanie - stepc25@csu.fullerton.edu<br>
  
 For this program we used <b>C++<b>
 
